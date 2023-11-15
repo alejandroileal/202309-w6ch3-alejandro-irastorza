@@ -1,3 +1,4 @@
+import React from 'react';
 import { Character } from '../../model/character';
 import { GOTCard } from '../card/got.card';
 import '../../index.css';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Character } from '../../model/character';
 import '../../index.css';
 import { useState } from 'react';
