@@ -38,3 +38,5 @@ const characterSlice = createSlice({
     // })
   },
 });
+
+export default characterSlice.reducer;
