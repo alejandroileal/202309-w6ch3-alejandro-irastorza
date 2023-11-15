@@ -1,19 +1,33 @@
+import React from 'react';
 import { Character } from '../../model/character';
 import '../../index.css';
-import { useState } from 'react';
+import { AnyCharacter } from '../../services/eldenApiRepo';
 
 type Props = {
-  character: Character;
+  character: AnyCharacter;
 };
 
 export function GOTCard({ character }: Props) {
-  const [liveness, setLiveness] = useState(true);
-
   const handleTalk = () => {};
 
-  const handleDie = () => {
-    setLiveness((prevLiveness) => !prevLiveness);
-    console.log(liveness);
+  const handleDie = () => {};
+
+  const selectEmoji = () => {
+    if (character.category === 'king') {
+      return '👑';
+    }
+
+    if (character.category === 'squire') {
+      return '🛡️';
+    }
+
+    if (character.category === 'fighter') {
+      return '🗡️';
+    }
+
+    if (character.category === 'adviser') {
+      return '🎓';
+    }
   };
 
   return (
@@ -64,7 +78,7 @@ export function GOTCard({ character }: Props) {
               </div>
             </div>
           </div>
-          {/* <i className="emoji">{makEmoji(character.category)}</i> */}
+          <i className="emoji">{selectEmoji()}</i>
         </div>
       </li>
     </>

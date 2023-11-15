@@ -1,4 +1,5 @@
 export interface Character {
+  id: number;
   isAlive: boolean;
   message: string;
   name: string;
@@ -17,10 +18,12 @@ export interface Fighter extends Character {
 }
 
 export interface Adviser extends Character {
-  adviseTo: {};
+  adviseTo: Fighter;
 }
 
 export interface Squire extends Character {
   serveLevel: number;
-  servesTo: {};
+  servesTo: Fighter;
 }
+
+// type AnyCharacter = King | Fighter | Adviser | Squire | null;
