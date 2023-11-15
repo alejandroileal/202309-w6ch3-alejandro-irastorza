@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Character } from '../model/character';
+import { loadTunk } from '../tunks/characters.tunks';
 
 type CharacterState = {
   characters: Character[];
@@ -20,6 +21,17 @@ const characterSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase();
+    builder.addCase(loadTunk.pending, (state: CharacterState) => {
+      state.state = 'loading';
+      return state;
+    }),
+      builder.addCase(
+        loadTunk.fulfilled,
+        (state: CharacterState, { payload }: PayloadAction<Character[]>) => {
+          state.characters = payload;
+          state.state = 'idle';
+          return state;
+        }
+      );
   },
 });
