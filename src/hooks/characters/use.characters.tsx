@@ -2,9 +2,10 @@ import { useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { EldenApiRepo } from '../../services/eldenApiRepo';
 import { loadCharactersTunk } from '../../tunks/characters.tunks';
+import { AppDispatch } from '../../store/store';
 
 export function useCharacters() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const repo = useMemo(() => new EldenApiRepo(), []);
 
