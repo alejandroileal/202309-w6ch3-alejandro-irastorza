@@ -33,5 +33,8 @@ const characterSlice = createSlice({
           return state;
         }
       );
+    // builder.addCase(loadTunk.rejected, (state: CharacterState) => {
+    //   state.state
+    // })
   },
 });
