@@ -16,4 +16,8 @@ export function useCharacters() {
       console.log((error as Error).message);
     }
   }, [repo]);
+
+  return {
+    loadCharacters,
+  };
 }
