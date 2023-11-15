@@ -3,11 +3,7 @@ import { Character } from '../../model/character';
 import { GOTCard } from '../card/got.card';
 import '../../index.css';
 
-type props = {
-  characters: Character[];
-};
-
-export function List({ characters }: props) {
+export function List() {
   return (
     <div>
       <ul className="characters-list row list-unstyled">
