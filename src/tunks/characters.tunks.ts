@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ApiRepoCharacters } from '../services/eldenApiRepo';
+import { EldenApiRepo } from '../services/eldenApiRepo';
 
 export const loadCharactersTunk = createAsyncThunk(
   'characters/load',
-  async (repo: ApiRepoCharacters) => {
+  async (repo: EldenApiRepo) => {
     const characters = await repo.getCharacters();
     return characters;
   }
