@@ -1,4 +1,5 @@
 export interface Character {
+  id: number;
   isAlive: boolean;
   message: string;
   name: string;
