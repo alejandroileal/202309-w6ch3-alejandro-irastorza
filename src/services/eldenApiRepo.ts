@@ -1,7 +1,7 @@
 import { Adviser, Fighter, King, Squire } from '../model/character';
 export type AnyCharacter = King | Fighter | Adviser | Squire;
 
-export class ApiRepoCharacters {
+export class EldenApiRepo {
   apiUrl = 'http://localhost:3000/characters';
 
   async getCharacters(): Promise<AnyCharacter[]> {
